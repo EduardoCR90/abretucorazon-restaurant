@@ -1,0 +1,24 @@
+{
+  "configuration_hash": "73a7289fbbcf406b6a7598b3105da117bde918d9121a771e69b53242d0db65ea",
+  "deployment": {
+    "provisioning_endpoint": "https://wanrzgumoamryuybmopa.supabase.co/functions/v1/astro-provisioning",
+    "publication_endpoint": "https://wanrzgumoamryuybmopa.supabase.co/functions/v1/publications"
+  },
+  "format": 1,
+  "repository": "EduardoCR90/abretucorazon-restaurant",
+  "request_id": "7c0d6fd5-9534-4579-9062-96d3dc76eb08",
+  "sanity": {
+    "dataset": "production",
+    "project_id": "lvtvr3ef"
+  },
+  "specification_hash": "ed3af52dd9a6ad2ba154158a2be4b3ef35b6fe729faf9886eeed511e09bfbead",
+  "template": {
+    "configuration_contract": 1,
+    "content_contract": "salitre-v1",
+    "distribution_hash": "fbfa6e4724068c0e56a55da11a82125ec4f81733b2e73729d807e04b644700e3",
+    "source_commit": "a2c059b77813e32dba8418f8294e1faecee51b76",
+    "template_key": "restaurant-editorial",
+    "version": "0.4.0",
+    "visual_contract": 2
+  }
+}

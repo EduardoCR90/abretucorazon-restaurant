@@ -27,5 +27,20 @@ const response = await fetch(endpoint, {
   }),
   signal: AbortSignal.timeout(20000),
 });
-assert.equal(response.status, 200, `Provisioning callback rejected (${response.status})`);
+if (response.status !== 200) {
+  let detail = 'diagnóstico no disponible';
+  try {
+    const payload = await response.json();
+    if (
+      typeof payload?.error === 'string' &&
+      /^Callback Astro rechazado \((identity|state_lookup|source_verification|state_confirmation|pages_registration)\/(identity|contract|credentials|permissions|connection|manifest|database|pages|provider_response)\)$/.test(
+        payload.error,
+      )
+    )
+      detail = payload.error;
+  } catch {
+    // The provider body is intentionally omitted unless it matches the closed diagnostic contract.
+  }
+  throw new Error(`Provisioning callback rejected (${response.status}; ${detail})`);
+}
 console.log("Provisioning callback accepted");

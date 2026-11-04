@@ -1,4 +1,5 @@
 name: Bootstrap restaurant instance
+# One-time recovery after the validated Edge rollout.
 
 on:
   push:

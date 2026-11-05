@@ -1,4 +1,5 @@
 import { createContentLoader } from "@restaurant-platform/astro-template/content";
+import { recordDeploymentEvidence } from "@restaurant-platform/astro-template/ops/evidence";
 import { restaurantConfig } from "../../restaurant.config";
 import { demoContent } from "../instance/demo";
 
@@ -14,6 +15,7 @@ const loader = createContentLoader({
     SANITY_USE_MOCK: import.meta.env.SANITY_USE_MOCK ?? "false",
   },
   mockContent: demoContent,
+  onSnapshot: recordDeploymentEvidence,
 });
 
 export const getContent = loader.getContent;

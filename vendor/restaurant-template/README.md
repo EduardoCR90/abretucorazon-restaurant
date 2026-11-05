@@ -34,7 +34,7 @@ Existing logical page compositions continue to work when their CMS blocks are ab
 
 ## Distribution
 
-Package: `@restaurant-platform/astro-template`, current version `0.4.0`. Private Git source is the authority; no public npm publishing or credentials in restaurant builds. Version 0.4.0 adds the reviewed instance bootstrap used by the SaaS while preserving the content, visual and configuration contracts of 0.3.0.
+Package: `@restaurant-platform/astro-template`, current version `0.4.2`. Private Git source is the authority; no public npm publishing or credentials in restaurant builds. Version 0.4.2 exposes individually valid CMS pages during the explicit demo fallback used while a new restaurant's base editorial documents are still pending. It preserves the bootstrap recovery and deployment reporting guarantees of 0.4.1.
 
 Instances install `file:vendor/restaurant-template`, generated from an immutable upstream commit. `template.lock.json` records version, repository, commit and every distributed file's SHA-256. CI checks this manifest; edits to generated code stop updates rather than being overwritten. This is a controlled package distribution, not an independently maintained fork. Restaurant overrides stay in configuration, CMS and local assets.
 
@@ -46,10 +46,10 @@ The shared contract is compatible with the existing Studio/dashboard models. CMS
 
 ## Platform governance
 
-[Controlled instance updates, permissions boundary and provisioning contracts](docs/platform-governance.md). Version 0.4.0 preserves the visual/content contracts of 0.3.0.
+[Controlled instance updates, permissions boundary and provisioning contracts](docs/platform-governance.md). Version 0.4.2 preserves the visual/content contracts of 0.4.0.
 
 ## Instance bootstrap
 
 The repository can be configured as a private GitHub template. A newly generated repository initially contains the bootstrap workflow and this immutable release. The platform dispatches `.github/workflows/bootstrap-instance.yml` with a public, hashed specification. The workflow materializes a minimal independent Astro application, vendors the exact verified package release, runs its checks and reports the resulting commit through GitHub OIDC. It never receives Sanity write tokens, GitHub credentials from the platform or arbitrary scripts.
 
-The final instance keeps only its public configuration, version/integrity manifests, generated package distribution and standard Pages workflows. Future updates still use the controlled package updater; restaurant content and visual overrides remain outside the shared package.
+The final instance keeps only its public configuration, version/integrity manifests, generated package distribution and standard Pages workflows. Those workflows already exist byte-for-byte in the GitHub template before bootstrap, so the Actions token never needs to create or replace workflow files. Future updates still use the controlled package updater; restaurant content and visual overrides remain outside the shared package.

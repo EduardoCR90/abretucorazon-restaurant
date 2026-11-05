@@ -1,11 +1,6 @@
 name: Bootstrap restaurant instance
-# One-time recovery after the validated Edge rollout.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/bootstrap-instance.yml
   workflow_dispatch:
     inputs:
       request_id:
@@ -27,7 +22,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: bootstrap-${{ inputs.request_id || github.sha }}
+  group: bootstrap-${{ inputs.request_id }}
   cancel-in-progress: false
 
 jobs:
@@ -39,9 +34,9 @@ jobs:
       ASTRO_TELEMETRY_DISABLED: '1'
       SANITY_USE_MOCK: 'true'
       SANITY_ALLOW_DEMO_FALLBACK: 'true'
-      SPECIFICATION_B64: ${{ inputs.specification_b64 || '' }}
-      SPECIFICATION_HASH: ${{ inputs.specification_hash || '' }}
-      REQUEST_ID: ${{ inputs.request_id || '' }}
+      SPECIFICATION_B64: ${{ inputs.specification_b64 }}
+      SPECIFICATION_HASH: ${{ inputs.specification_hash }}
+      REQUEST_ID: ${{ inputs.request_id }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,23 +49,13 @@ jobs:
           node --input-type=module <<'JS'
           import assert from 'node:assert/strict';
           import { createHash } from 'node:crypto';
-          import { appendFile, readFile, writeFile } from 'node:fs/promises';
-          if (process.env.GITHUB_EVENT_NAME === 'push') {
-            const manifest = JSON.parse(await readFile('instance.manifest.json', 'utf8'));
-            assert.match(manifest.request_id, /^[a-f0-9-]{36}$/i);
-            assert.match(manifest.specification_hash, /^[a-f0-9]{64}$/);
-            await appendFile(
-              process.env.GITHUB_ENV,
-              `REQUEST_ID=${manifest.request_id}\nSPECIFICATION_HASH=${manifest.specification_hash}\n`,
-            );
-          } else {
-            assert.match(process.env.REQUEST_ID, /^[a-f0-9-]{36}$/i);
-            assert.match(process.env.SPECIFICATION_HASH, /^[a-f0-9]{64}$/);
-            const value = Buffer.from(process.env.SPECIFICATION_B64, 'base64url');
-            assert.ok(value.length > 0 && value.length <= 60000);
-            assert.equal(createHash('sha256').update(value).digest('hex'), process.env.SPECIFICATION_HASH);
-            await writeFile(process.env.RUNNER_TEMP + '/instance-spec.json', value, { mode: 0o600 });
-          }
+          import { writeFile } from 'node:fs/promises';
+          assert.match(process.env.REQUEST_ID, /^[a-f0-9-]{36}$/i);
+          assert.match(process.env.SPECIFICATION_HASH, /^[a-f0-9]{64}$/);
+          const value = Buffer.from(process.env.SPECIFICATION_B64, 'base64url');
+          assert.ok(value.length > 0 && value.length <= 60000);
+          assert.equal(createHash('sha256').update(value).digest('hex'), process.env.SPECIFICATION_HASH);
+          await writeFile(process.env.RUNNER_TEMP + '/instance-spec.json', value, { mode: 0o600 });
           JS
       - name: Materialize and validate the exact release
         id: materialize

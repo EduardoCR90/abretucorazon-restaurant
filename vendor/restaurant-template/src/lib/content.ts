@@ -132,6 +132,9 @@ export function createContentLoader(options: {
         resolvePublishedContent(raw, {
           fallback: options.mockContent,
           requiredSlugs: config.requiredSlugs,
+          allowSupplementalPages: environmentFlag(
+            env.SANITY_ALLOW_DEMO_FALLBACK,
+          ),
         }),
         raw,
       );

@@ -38,4 +38,4 @@ export const contentSchema = z.object({
 export type Content = z.infer<typeof contentSchema>;
 export type EditorialImage = z.infer<typeof imageSchema>;
 export type Dish = z.infer<typeof dishSchema>;
-export type ContentResult = { presentation?: import('../lib/config').PresentationAssets; content: Content; source: 'demo' | 'sanity'; warning?: string; cmsStatus?: 'disabled' | 'empty' | 'published' | 'error' };
+export type ContentResult = { presentation?: import('../lib/config').PresentationAssets; content: Content; source: 'demo' | 'sanity'; warning?: string; cmsStatus?: 'disabled' | 'empty' | 'partial' | 'published' | 'error' };

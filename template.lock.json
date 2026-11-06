@@ -1,12 +1,12 @@
 {
   "format": 1,
   "repository": "EduardoCR90/restaurant-astro-template",
-  "version": "0.4.0",
-  "commit": "a2c059b77813e32dba8418f8294e1faecee51b76",
+  "version": "0.4.2",
+  "commit": "bd45c9f3c1f5c86e6e0a581a588e9db2c53b645d",
   "files": {
     "LICENSE": "4966282d2e6b42bfb3711020a8cb323d426f3fd79224665a427efbf393e46464",
-    "README.md": "11836d064728fa22ea4d3462536cbe1cd0f292fd39192d25c5b848834d1532ac",
-    "package.json": "7d93c72b97e8670ece2dbedbc5cde1d935dd569e569a6de7f429478706e52c29",
+    "README.md": "bad8283b31ac7b2ccf334015821a69cbab84265b0b9645facd6ddb15e61ce463",
+    "package.json": "61f3ae2e2d31dfb9ed2eae7e40af92745f41adad520844059907ccdc07d61bed",
     "src/components/ContactPage.astro": "fa83a8246b95cfb6960ffc182d1474879859aae472d51555c0f983015cc0a085",
     "src/components/EditorialHeading.astro": "e7b62fb70c2c69d086761068e318e0c27b389a780bff0ca5534e66c34f934560",
     "src/components/EditorialLink.astro": "e0f3e3e4cdca589888fb5edd6f1c88f5b12535963691c91efd554f7ffbd12095",
@@ -39,13 +39,13 @@
     "src/components/blocks/registry.ts": "49231bc77ad47f5df1835a3510b159ff71685a24e34fe8ef9d81ecded8b4b42b",
     "src/layouts/BaseLayout.astro": "6597e650966f6a1b862afdad2dad7afbddc123897535026ae649005af00733f7",
     "src/lib/blocks.ts": "14700f0d0bfd94d57e9c00a3b5cd8a80eafd08caf66187685ed0ee901d9e7434",
-    "src/lib/config.ts": "0fbaf1f17ec5afd7ae4f9992a4b87b9ce975918e9084b76514e3050ec9af0ce4",
-    "src/lib/content.ts": "4be63b5919780388a562d58d8371f8d008cfe0326ad69ee390966b62e3e110f3",
+    "src/lib/config.ts": "409c6f07eada9be2277581f1736807c08006e3ca1bd8b981cf5c5eb0798f6677",
+    "src/lib/content.ts": "d09bf682e56783a18122840f0680452473e98f5a9ee071b985320d86f4f4fd09",
     "src/lib/editorial.ts": "cfe721502b1176554147b64c39359c580322f0f165f5fe89eeafd61fc36cb17c",
     "src/lib/format.ts": "a4d1cd76109ffcb48e297554d97c7e4b9cf0b87b8ddcd11262bc6ab5e0e12ac8",
     "src/lib/pages.ts": "f6e225755eb83ec29ce30ce3a432ced6f935348d40f380f4ac240db4f812676a",
     "src/lib/paths.ts": "9e38cb8b2ffbb43a758f14de2dcca810036c874b920be7a440a4aab216ee05a2",
-    "src/lib/published-content.ts": "60a901119bcae9c0ccc072fc4ea656a1ba2020af8cd32326276fedcee44c031f",
+    "src/lib/published-content.ts": "3ab9cb7e449f1a7e267ac9d4219c8517774c73efbbf6495605600c39faab0683",
     "src/lib/queries.ts": "abb018f054413312748316809770b3d8002e5149f33b4c390d1b705283d7b1c0",
     "src/lib/rich-text.ts": "27c6ee17dc2c21fc296d2d536a83bbd6ae82e5e0aa413dfca8d2deff824d878f",
     "src/lib/sanity.server.ts": "aa88fb1f65444ea9f8fab86d4d28a3422a2676459657dce0b5c7bff6ce758692",
@@ -54,12 +54,12 @@
     "src/ops/template-evidence.mjs": "8eee8daad5e6c2f978dbf158d579baf4f1fc1ef7f5f7dc7ba4d7b2c5fc5c756c",
     "src/styles/global.css": "c3a7e17dff5c0d2a6f7ec1ea05a4fb8a0ea7d9118e9785b8f270f1b40d989ffa",
     "src/types/blocks.ts": "ede0be2c0d6f3740f4f3fd4e405a07db40b05bf6b2024a0bb8ce71d7def17412",
-    "src/types/content.ts": "4b88f7a722709cafc04d8d69c3663f7fdf08e68438ff81d3cdf820caa593f10f",
+    "src/types/content.ts": "77a80f21e509c934f98c9c6021787bc45e496deb5533559fd7784daf90cb6d27",
     "src/types/editorial.ts": "4d81151b0fc0225c6e12fa5f51ef522efbc086fceee6db4e6828a751198a2e2a",
     "src/types/platform.ts": "4590da64560fa6980fbac02f89c0c3614dca63987fda3adf66517ade988ae2b4",
     "src/types/restaurant.ts": "7e65211d697a795337719d89613a62df3d7863b6842b053b7aeb9ad1e23d9e4e",
     "src/types/routes.ts": "bfef12a7c14d4bc3d4fe531baa739d7a924e3b8fcf4143f372a7e08fc5891ec8",
     "src/types/visual.ts": "aadadb2f9d6a674a342548d84cd06fbeb96597e4ce08be56d3b0565a1ead52d6",
-    "template.release.json": "d5f0961b7b026913f6b088b4447154ec7688010bc526c624853c48cc7a0af89a"
+    "template.release.json": "04442b97e861264dbef6f9b4f83d1c4e0f1f8fb5c50584998ef1a8e2265169f5"
   }
 }

@@ -15,10 +15,10 @@
   "template": {
     "configuration_contract": 1,
     "content_contract": "salitre-v1",
-    "distribution_hash": "fbfa6e4724068c0e56a55da11a82125ec4f81733b2e73729d807e04b644700e3",
-    "source_commit": "a2c059b77813e32dba8418f8294e1faecee51b76",
+    "distribution_hash": "b037bc5013bd76626c7cee669482371843c6107428c2de913f8696fbc371ba00",
+    "source_commit": "bd45c9f3c1f5c86e6e0a581a588e9db2c53b645d",
     "template_key": "restaurant-editorial",
-    "version": "0.4.0",
+    "version": "0.4.2",
     "visual_contract": 2
   }
 }
